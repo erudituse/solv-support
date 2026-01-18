@@ -120,12 +120,13 @@
             <li>Workout sessions (strength training, cardio)</li>
             <li>Body measurements (weight, body fat percentage)</li>
             <li>Heart rate data during workouts</li>
+            <li>Date of Birth - for max Heart Rate calculations</li>
             <li>Nutrition data (calories, protein, carbohydrates, fats, fiber)</li>
         </ul>
         <p><strong>Important:</strong> We only READ data from HealthKit. We never write or modify your HealthKit data.</p>
 
         <h3>Workout Exercise Data</h3>
-        <p>When you import workout data from third-party fitness apps (such as Iron), we store:</p>
+        <p>When you import workout data from third-party fitness apps (such as Iron), we store the following locally on your phone:</p>
         <ul>
             <li>Exercise names and categories</li>
             <li>Sets, reps, and weights</li>
@@ -134,7 +135,7 @@
         </ul>
 
         <h3>User Preferences</h3>
-        <p>We store your app preferences locally:</p>
+        <p>We store your app preferences locally on your phone:</p>
         <ul>
             <li>Exercise category customizations</li>
             <li>Display settings</li>
@@ -155,7 +156,7 @@
         <ul>
             <li>Display training analytics and insights</li>
             <li>Track progressive overload and muscle group training</li>
-            <li>Generate AI-powered recommendations</li>
+            <li>Generate recommendations using statistics</li>
             <li>Visualize trends and outcomes</li>
         </ul>
 
@@ -181,41 +182,24 @@
         <h3>Data Access</h3>
         <p>All your data is accessible within the app at any time. You can view:</p>
         <ul>
-            <li>All workout sessions and exercises</li>
-            <li>Training analytics and trends</li>
-            <li>Body composition history</li>
+            <li>Training analysis/li>
+            <li>Nutrition</li>
         </ul>
 
         <h3>Data Deletion</h3>
-        <p>You have complete control over your data:</p>
-        <p><strong>Delete Specific Data:</strong></p>
-        <ul>
-            <li>Swipe to delete individual workout sessions</li>
-            <li>Remove imported exercises</li>
-            <li>Clear specific time ranges</li>
-        </ul>
         <p><strong>Delete All App Data:</strong></p>
         <ol>
-            <li>Open Settings on your iOS device</li>
-            <li>Go to General &gt; iPhone Storage</li>
-            <li>Select "Health Metrics"</li>
-            <li>Tap "Delete App"</li>
+            <li>Delete app/li>
         </ol>
         <p>This removes all app data permanently from your device.</p>
 
-        <h3>Data Portability</h3>
-        <p>Your workout data can be exported at any time:</p>
-        <ul>
-            <li>Export to CSV format for analysis in other tools</li>
-            <li>Export includes all workout sessions and exercises</li>
-            <li>Available from Settings &gt; Export Data</li>
-        </ul>
 
         <h2>HealthKit Permission</h2>
         <p>Solv requires HealthKit access to function. We request:</p>
         <p><strong>Read Permissions:</strong></p>
         <ul>
             <li>Workouts (HKWorkoutType)</li>
+            <li>Date of Birth - for max Heart Rate calculation</li>
             <li>Body Mass (HKQuantityType)</li>
             <li>Body Fat Percentage (HKQuantityType)</li>
             <li>Heart Rate (HKQuantityType)</li>
