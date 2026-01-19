@@ -54,6 +54,16 @@
             margin-bottom: 16px;
             color: var(--text);
         }
+        h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            margin-top: 16px;
+            color: var(--text);
+        }
+        h3:first-child {
+            margin-top: 0;
+        }
         p {
             color: var(--text-secondary);
             margin-bottom: 12px;
@@ -74,10 +84,6 @@
             color: var(--text-secondary);
             font-size: 14px;
         }
-        .email-link {
-            font-size: 18px;
-            font-weight: 500;
-        }
         .features {
             display: grid;
             gap: 12px;
@@ -92,21 +98,88 @@
             color: var(--accent);
             font-size: 18px;
         }
+        .steps {
+            counter-reset: step;
+        }
+        .step {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            background: var(--accent);
+            color: var(--bg);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+        .faq-q {
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        .support-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        .support-btn:hover {
+            text-decoration: none;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">Solv</div>
-        <div class="tagline">Training Intelligence</div>
+        <div class="tagline">Fitness Intelligence</div>
 
-       <div class="card">                                                                                                                                                                        
-          <h2>About</h2>                                                                                                                                                                        
-          <p>It started with a train I almost missed.</p>                                                                                                                                       
-          <p>15 seconds of running—that's all it took before I was gasping for air. Hands on knees, I knew something had to change.</p>                                                         
-          <p>So I started exercising. But being lazy by nature, I didn't want to waste effort on things that weren't working. I needed to know: "Is what I'm doing actually making a              
-          difference?"</p>                                                                                                                                                                          
-          <p>That question became Solv—a training intelligence app that doesn't just show you what happened, but what it means.</p>                                                             
-      </div>  
+        <div class="card">
+            <h2>About</h2>
+            <p>Solv is a training intelligence app that answers the question every athlete asks: "Is what I'm doing actually working?"</p>
+            <p>Unlike fitness trackers that show you what happened, Solv shows you what it means. It synthesizes your workouts, nutrition, recovery, and body composition into clear, actionable insights.</p>
+        </div>
+
+        <div class="card">
+            <h2>Getting Started</h2>
+            <div class="steps">
+                <div class="step">
+                    <span><strong>Grant HealthKit Access</strong> — When you first open Solv, you'll be asked to allow access to Apple Health. Grant access to workouts, heart rate, body measurements, and nutrition data.</span>
+                </div>
+                <div class="step">
+                    <span><strong>Let it Sync</strong> — Solv will automatically read your existing data from Apple Health. This may take a moment depending on how much data you have.</span>
+                </div>
+                <div class="step">
+                    <span><strong>Import Strength Training (Optional)</strong> — If you use the Iron app for strength training, go to Settings and tap "Import from Iron" to bring in your exercise details (sets, reps, weights).</span>
+                </div>
+                <div class="step">
+                    <span><strong>Explore Your Insights</strong> — The Home tab shows your trajectory and whether your training is working. Tap into Training for details, and Fuel to see if nutrition supports your goals.</span>
+                </div>
+            </div>
+        </div>
 
         <div class="card">
             <h2>Features</h2>
@@ -129,20 +202,73 @@
                 </div>
                 <div class="feature">
                     <span class="feature-icon">&#10003;</span>
-                    <span>100% on-device - your data stays yours</span>
+                    <span>6-week outcome projections</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">&#10003;</span>
+                    <span>100% on-device — your data stays yours</span>
                 </div>
             </div>
         </div>
 
-        <div class="card">                                                                                                                                                                        
-          <h2>Support</h2>                                                                                                                                                                      
-          <p>Need help or have questions?</p>                                                                                                                                                   
-          <p class="email-link"><a href="https://github.com/erudituse/solv-support/issues">Open a Support Request</a></p>                                                                       
-        </div>        
+        <div class="card">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">Why does the app show "Need more data"?</div>
+                <div class="faq-a">Solv needs at least 3 workouts in the last 21 days to calculate meaningful trends. Keep logging training data and the insights will appear.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What data does Solv need?</div>
+                <div class="faq-a">Solv reads from Apple Health: workouts, heart rate, resting heart rate, body weight, body fat percentage, data of birth and nutrition (calories, protein, carbs, fat). The more data available, the better the insights.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How do I import from the Iron app?</div>
+                <div class="faq-a">In Iron, go to Settings > Backup & Export > Workout Data> TXT > Save to Files.  Then in Solv, go to Settings > Import Iron Data > Go to the folder where you've save the txt file and select it. The Solv import process will NOT import duplciates.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How do I import from other fitness apps?</div>
+                <div class="faq-a">We have plans to import data from other fitness apps. To prioritize your favorite app, please submit <a href"https://github.com/erudituse/solv-support/issues">Support Request</a></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Why is my nutrition showing as "Limiting"?</div>
+                <div class="faq-a">Solv compares your nutrition intake to your training demands. "Limiting" means your current intake may not fully support your training load. Check protein and calorie sufficiency in the Fuel tab.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Does Solv upload my data anywhere?</div>
+                <div class="faq-a">No. All analysis happens on your device. Solv has zero cloud sync, zero servers, zero tracking. Your health data never leaves your phone.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Why do I need to grant HealthKit write permission?</div>
+                <div class="faq-a">iOS requires apps to request both read and write permissions together for HealthKit, even if the app only reads data. Solv never writes to Apple Health.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What apps work with Solv?</div>
+                <div class="faq-a">Any app that writes to Apple Health works with Solv. For nutrition: MyFitnessPal, Cronometer, Noom, MacroFactor. For workouts: Apple Fitness, Strava, Strong. For strength details, currently, only Iron app (via text import).</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How are projections calculated?</div>
+                <div class="faq-a">Solv analyzes your 21-day trends for weight, strength, and endurance, then projects where you'll be in 6 weeks if current patterns continue. Confidence levels reflect data quality and consistency.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Support</h2>
+            <p>Have a question, found a bug, or want to request a feature?</p>
+            <a href="https://github.com/erudituse/solv-support/issues" class="support-btn">Open an Issue on GitHub</a>
+        </div>
 
         <div class="card">
             <h2>Privacy First</h2>
-            <p>All analysis happens on your device. Zero cloud sync. Zero tracking. Zero ads.</p>
+            <p>All analysis happens on your device. Zero cloud sync. Zero tracking. Zero ads. Your health data is yours alone.</p>
         </div>
 
         <div class="links">
